@@ -7,9 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020</copyright>
+    <lastBuildDate>Tue, 30 Jun 2020 23:25:32 +0200</lastBuildDate>
     
 	<atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>biography</title>
+      <link>https://example.org/tags/biography/</link>
+      <pubDate>Tue, 30 Jun 2020 23:25:32 +0200</pubDate>
+      
+      <guid>https://example.org/tags/biography/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hobby</title>
+      <link>https://example.org/tags/hobby/</link>
+      <pubDate>Tue, 30 Jun 2020 23:25:32 +0200</pubDate>
+      
+      <guid>https://example.org/tags/hobby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://example.org/tags/programming/</link>
+      <pubDate>Tue, 30 Jun 2020 23:25:32 +0200</pubDate>
+      
+      <guid>https://example.org/tags/programming/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
