@@ -4,7 +4,37 @@
   
   <url>
     <loc>https://example.org/</loc>
-    <lastmod>2020-06-30T23:25:32+02:00</lastmod>
+    <lastmod>2020-07-12T12:57:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.org/blog/</loc>
+    <lastmod>2020-07-12T12:57:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.org/tags/git/</loc>
+    <lastmod>2020-07-12T12:57:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.org/blog/git-aliases/</loc>
+    <lastmod>2020-07-12T12:57:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.org/tags/productivity/</loc>
+    <lastmod>2020-07-12T12:57:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.org/tags/</loc>
+    <lastmod>2020-07-12T12:57:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.org/tags/workstation-setup/</loc>
+    <lastmod>2020-07-12T12:57:58+02:00</lastmod>
   </url>
   
   <url>
@@ -18,22 +48,12 @@
   </url>
   
   <url>
-    <loc>https://example.org/blog/</loc>
-    <lastmod>2020-06-30T23:25:32+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://example.org/tags/hobby/</loc>
     <lastmod>2020-06-30T23:25:32+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://example.org/tags/programming/</loc>
-    <lastmod>2020-06-30T23:25:32+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.org/tags/</loc>
     <lastmod>2020-06-30T23:25:32+02:00</lastmod>
   </url>
   

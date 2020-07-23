@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020</copyright>
-    <lastBuildDate>Tue, 30 Jun 2020 23:25:32 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2020 12:57:58 +0200</lastBuildDate>
     
 	<atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>git</title>
+      <link>https://example.org/tags/git/</link>
+      <pubDate>Sun, 12 Jul 2020 12:57:58 +0200</pubDate>
+      
+      <guid>https://example.org/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>productivity</title>
+      <link>https://example.org/tags/productivity/</link>
+      <pubDate>Sun, 12 Jul 2020 12:57:58 +0200</pubDate>
+      
+      <guid>https://example.org/tags/productivity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>workstation-setup</title>
+      <link>https://example.org/tags/workstation-setup/</link>
+      <pubDate>Sun, 12 Jul 2020 12:57:58 +0200</pubDate>
+      
+      <guid>https://example.org/tags/workstation-setup/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>biography</title>

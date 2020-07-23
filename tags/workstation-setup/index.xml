@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
-    <link>https://example.org/</link>
-    <description>Recent content on </description>
+    <title>workstation-setup on </title>
+    <link>https://example.org/tags/workstation-setup/</link>
+    <description>Recent content in workstation-setup on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020</copyright>
     <lastBuildDate>Sun, 12 Jul 2020 12:57:58 +0200</lastBuildDate>
     
-	<atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://example.org/tags/workstation-setup/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,16 +19,6 @@
       
       <guid>https://example.org/blog/git-aliases/</guid>
       <description>Introduction This is the first post of &amp;ldquo;Workstation Setup&amp;rdquo; series. I will be covering how to setup various tools that I use in daily work in each episode. This series is inspired by the fact that I&amp;rsquo;m currently migrating from old computer to a new one at work. This episode will cover how to set up git aliases. In case you are not familiar with git, you should visit the official web page.</description>
-    </item>
-    
-    <item>
-      <title>About Me</title>
-      <link>https://example.org/blog/about-me/</link>
-      <pubDate>Tue, 30 Jun 2020 23:25:32 +0200</pubDate>
-      
-      <guid>https://example.org/blog/about-me/</guid>
-      <description>About me My name is Piotr Glazar. I graduated from University of Warsaw with Msc in Computer Science.
-I&amp;rsquo;m proficient in the following programming languages:  Scala Java Python  And frameworks:  Spring (Spring Boot) and friends Akka Numpy and friends  And tools:  Kubernetes Git AWS Gradle SBT  I&amp;rsquo;m familiar with the following databases:  Postgres / MySQL Cassandra MongoDB  I have intermediate knowledge of:  Golang Bash Javascript  Hobbies and interests Apart from programming I&amp;rsquo;m interested in astronomy.</description>
     </item>
     
   </channel>
