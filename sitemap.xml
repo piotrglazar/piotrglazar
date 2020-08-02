@@ -4,12 +4,37 @@
   
   <url>
     <loc>https://example.org/</loc>
-    <lastmod>2020-07-12T12:57:58+02:00</lastmod>
+    <lastmod>2020-07-26T10:33:48+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://example.org/blog/</loc>
-    <lastmod>2020-07-12T12:57:58+02:00</lastmod>
+    <lastmod>2020-07-26T10:33:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.org/tags/jdk/</loc>
+    <lastmod>2020-07-26T10:33:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.org/blog/jenv-multiple-jdks/</loc>
+    <lastmod>2020-07-26T10:33:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.org/tags/productivity/</loc>
+    <lastmod>2020-07-26T10:33:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.org/tags/</loc>
+    <lastmod>2020-07-26T10:33:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.org/tags/workstation-setup/</loc>
+    <lastmod>2020-07-26T10:33:48+02:00</lastmod>
   </url>
   
   <url>
@@ -19,21 +44,6 @@
   
   <url>
     <loc>https://example.org/blog/git-aliases/</loc>
-    <lastmod>2020-07-12T12:57:58+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.org/tags/productivity/</loc>
-    <lastmod>2020-07-12T12:57:58+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.org/tags/</loc>
-    <lastmod>2020-07-12T12:57:58+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.org/tags/workstation-setup/</loc>
     <lastmod>2020-07-12T12:57:58+02:00</lastmod>
   </url>
   

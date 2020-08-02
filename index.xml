@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020</copyright>
-    <lastBuildDate>Sun, 12 Jul 2020 12:57:58 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2020 10:33:48 +0200</lastBuildDate>
     
 	<atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>jEnv - Managing Multiple Jdks</title>
+      <link>https://example.org/blog/jenv-multiple-jdks/</link>
+      <pubDate>Sun, 26 Jul 2020 10:33:48 +0200</pubDate>
+      
+      <guid>https://example.org/blog/jenv-multiple-jdks/</guid>
+      <description>Introduction Before Java 8 there was no need to have multiple JDKs on your machine. Java development process was slow enough that even big and rusty corporations could catch up. But since JDK 9 the development process is much faster and new Java versions are released more often.
+Why even bother? Some projects may run on an older JDK due to various reasons:
+ the tooling does not yet support new JDKs, some libraries do not work on new JDKs - this can be seen when migrating from pre-JDK 9 to JDK 9 or onward, sometimes it is better to wait than to be an early adopter for core production services, and many, many more.</description>
+    </item>
     
     <item>
       <title>Git Aliases</title>

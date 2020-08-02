@@ -2,12 +2,12 @@
 <html lang="en-us">
 
 <head>
-  <title>About Me | </title>
+  <title>jEnv - Managing Multiple Jdks | </title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
-  <meta name="description" content="About me">
-  <meta name="keywords" content="self , about me , programming">
+  <meta name="description" content="">
+  <meta name="keywords" content="jdk , jenv">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,9 +48,9 @@
             "@id": "https:\/\/example.org\/"
       },
       "articleSection" : "blog",
-      "name" : "About Me",
-      "headline" : "About Me",
-      "description" : "About me",
+      "name" : "jEnv - Managing Multiple Jdks",
+      "headline" : "jEnv - Managing Multiple Jdks",
+      "description" : "",
       "inLanguage" : "en-US",
       "author" : "",
       "creator" : "",
@@ -58,11 +58,11 @@
       "accountablePerson" : "",
       "copyrightHolder" : "",
       "copyrightYear" : "2020",
-      "datePublished": "2020-06-30 23:25:32 \x2b0200 CEST",
-      "dateModified" : "2020-06-30 23:25:32 \x2b0200 CEST",
-      "url" : "https:\/\/example.org\/blog\/about-me\/",
-      "wordCount" : "152",
-      "keywords" : ["self", "about me", "programming", "Blog"]
+      "datePublished": "2020-07-26 10:33:48 \x2b0200 CEST",
+      "dateModified" : "2020-07-26 10:33:48 \x2b0200 CEST",
+      "url" : "https:\/\/example.org\/blog\/jenv-multiple-jdks\/",
+      "wordCount" : "348",
+      "keywords" : ["jdk", "jenv", "Blog"]
     }
   
   </script>
@@ -114,54 +114,46 @@ if (!doNotTrack) {
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">About Me</h1>
-            <time datetime="2020-06-30 23:25:32 &#43;0200 CEST" class="post__date"
-            >Jun 30 2020</time>
+            <h1 id="post__title">jEnv - Managing Multiple Jdks</h1>
+            <time datetime="2020-07-26 10:33:48 &#43;0200 CEST" class="post__date"
+            >Jul 26 2020</time>
           </header>
           <article class="post__content">
               
-<h2 id="about-me">About me<a class="anchor" href="#about-me">#</a></h2>
-<p>My name is Piotr Glazar. I graduated from University of Warsaw with Msc in Computer Science.</p>
-<h2 id="im-proficient-in-the-following-programming-languages">I&rsquo;m proficient in the following programming languages:<a class="anchor" href="#im-proficient-in-the-following-programming-languages">#</a></h2>
+<h1 id="introduction">Introduction</h1>
+<p>Before Java 8 there was no need to have multiple JDKs on your machine. Java development process
+was slow enough that even big and rusty corporations could catch up. But since JDK 9 the development
+process is much faster and new Java versions are released more often.</p>
+<h1 id="why-even-bother">Why even bother?</h1>
+<p>Some projects may run on an older JDK due to various reasons:</p>
 <ul>
-<li>Scala</li>
-<li>Java</li>
-<li>Python</li>
+<li>the tooling does not yet support new JDKs,</li>
+<li>some libraries do not work on new JDKs - this can be seen when migrating from pre-JDK 9 to JDK 9 or onward,</li>
+<li>sometimes it is better to wait than to be an early adopter for core production services,</li>
+<li>and many, many more.</li>
 </ul>
-<h2 id="and-frameworks">And frameworks:<a class="anchor" href="#and-frameworks">#</a></h2>
-<ul>
-<li>Spring (Spring Boot) and friends</li>
-<li>Akka</li>
-<li>Numpy and friends</li>
-</ul>
-<h2 id="and-tools">And tools:<a class="anchor" href="#and-tools">#</a></h2>
-<ul>
-<li>Kubernetes</li>
-<li>Git</li>
-<li>AWS</li>
-<li>Gradle</li>
-<li>SBT</li>
-</ul>
-<h2 id="im-familiar-with-the-following-databases">I&rsquo;m familiar with the following databases:<a class="anchor" href="#im-familiar-with-the-following-databases">#</a></h2>
-<ul>
-<li>Postgres / MySQL</li>
-<li>Cassandra</li>
-<li>MongoDB</li>
-</ul>
-<h2 id="i-have-intermediate-knowledge-of">I have intermediate knowledge of:<a class="anchor" href="#i-have-intermediate-knowledge-of">#</a></h2>
-<ul>
-<li>Golang</li>
-<li>Bash</li>
-<li>Javascript</li>
-</ul>
-<h2 id="hobbies-and-interests">Hobbies and interests<a class="anchor" href="#hobbies-and-interests">#</a></h2>
-<p>Apart from programming I&rsquo;m interested in astronomy. I have also more down to earth interests like cars or Lego.
-In my free time I enjoy watching movies or series and playing video games.</p>
-<h2 id="what-you-will-find-in-this-blog">What you will find in this blog<a class="anchor" href="#what-you-will-find-in-this-blog">#</a></h2>
-<p>I will write, hopefully interesting, posts about programming. Topics may vary from languages through
-frameworks to tools.
-Moreover, I&rsquo;m going to write code snippets that I use, so that I won&rsquo;t need to Google them anymore.
-I hope you will find them useful too.</p>
+<p>On the other hand being a good Java developer requires one to be up to date with updates introduced
+by new Java versions.</p>
+<h1 id="where-is-the-problem">Where is the problem?</h1>
+<p>Every Java developer knows that <code>java</code> is only one of programs shipped with JDK. There are other
+important tools like <code>javac</code>, <code>keytool</code>, <code>jps</code> and many others. They can be often picked up by
+build tools like <code>Gradle</code> or <code>Maven</code>. Even if you set <code>JAVA_HOME</code> environment variable for target JDK,
+a tool might pick up another one and the build fails.</p>
+<h1 id="what-is-the-solution">What is the solution?</h1>
+<p>Ideally we should be able to use the right JDK for the right project.
+Changing <code>JAVA_HOME</code> or <code>PATH</code> environment variables is tedious but
+fortunately there is a tool for that - <a href="https://www.jenv.be/">jEnv</a></p>
+<h1 id="usage">Usage</h1>
+<p>Just follow instructions on the web page. This tool is very simply to use yet
+very powerful. One thing that is not mentioned on the web page is that
+you can put <code>.java_version</code> file in the root directory of your project.
+This file should contain the <code>JDK</code> that you want to use for this project.
+The <code>JDK</code> version must match one of the values printed out by <code>jevn versions</code>
+command.</p>
+<p>Moreover, you want to make sure that <code>jenv doctor</code> passes all checks.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>Good luck and have fun with playing with various <code>JDK</code> whether it is for work or
+just for the pleasure of discovering new features in new <code>JDK</code>s.</p>
 
 
               
@@ -171,23 +163,23 @@ I hope you will find them useful too.</p>
 <ul class="tags__list">
     
     <li class="tag__item">
-        <a class="tag__link" href="https://example.org/tags/hobby/">hobby</a>
+        <a class="tag__link" href="https://example.org/tags/jdk/">jdk</a>
     </li>
     <li class="tag__item">
-        <a class="tag__link" href="https://example.org/tags/biography/">biography</a>
+        <a class="tag__link" href="https://example.org/tags/productivity/">productivity</a>
     </li>
     <li class="tag__item">
-        <a class="tag__link" href="https://example.org/tags/programming/">programming</a>
+        <a class="tag__link" href="https://example.org/tags/workstation-setup/">workstation-setup</a>
     </li></ul>
 
  <div class="pagination">
   
-
-  
     <a class="pagination__item" href="https://example.org/blog/git-aliases/">
-      <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >Git Aliases</a>
+        <span class="pagination__label">Previous Post</span>
+        <span class="pagination__title">Git Aliases</span>
     </a>
+  
+
   
 </div>
 
