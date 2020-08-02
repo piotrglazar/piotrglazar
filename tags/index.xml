@@ -2,76 +2,76 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on </title>
-    <link>https://example.org/tags/</link>
+    <link>https://piotrglazar.github.io/tags/</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020</copyright>
     <lastBuildDate>Sun, 26 Jul 2020 10:33:48 +0200</lastBuildDate>
     
-	<atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://piotrglazar.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>jdk</title>
-      <link>https://example.org/tags/jdk/</link>
+      <link>https://piotrglazar.github.io/tags/jdk/</link>
       <pubDate>Sun, 26 Jul 2020 10:33:48 +0200</pubDate>
       
-      <guid>https://example.org/tags/jdk/</guid>
+      <guid>https://piotrglazar.github.io/tags/jdk/</guid>
       <description></description>
     </item>
     
     <item>
       <title>productivity</title>
-      <link>https://example.org/tags/productivity/</link>
+      <link>https://piotrglazar.github.io/tags/productivity/</link>
       <pubDate>Sun, 26 Jul 2020 10:33:48 +0200</pubDate>
       
-      <guid>https://example.org/tags/productivity/</guid>
+      <guid>https://piotrglazar.github.io/tags/productivity/</guid>
       <description></description>
     </item>
     
     <item>
       <title>workstation-setup</title>
-      <link>https://example.org/tags/workstation-setup/</link>
+      <link>https://piotrglazar.github.io/tags/workstation-setup/</link>
       <pubDate>Sun, 26 Jul 2020 10:33:48 +0200</pubDate>
       
-      <guid>https://example.org/tags/workstation-setup/</guid>
+      <guid>https://piotrglazar.github.io/tags/workstation-setup/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>https://example.org/tags/git/</link>
+      <link>https://piotrglazar.github.io/tags/git/</link>
       <pubDate>Sun, 12 Jul 2020 12:57:58 +0200</pubDate>
       
-      <guid>https://example.org/tags/git/</guid>
+      <guid>https://piotrglazar.github.io/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>biography</title>
-      <link>https://example.org/tags/biography/</link>
+      <link>https://piotrglazar.github.io/tags/biography/</link>
       <pubDate>Tue, 30 Jun 2020 23:25:32 +0200</pubDate>
       
-      <guid>https://example.org/tags/biography/</guid>
+      <guid>https://piotrglazar.github.io/tags/biography/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hobby</title>
-      <link>https://example.org/tags/hobby/</link>
+      <link>https://piotrglazar.github.io/tags/hobby/</link>
       <pubDate>Tue, 30 Jun 2020 23:25:32 +0200</pubDate>
       
-      <guid>https://example.org/tags/hobby/</guid>
+      <guid>https://piotrglazar.github.io/tags/hobby/</guid>
       <description></description>
     </item>
     
     <item>
       <title>programming</title>
-      <link>https://example.org/tags/programming/</link>
+      <link>https://piotrglazar.github.io/tags/programming/</link>
       <pubDate>Tue, 30 Jun 2020 23:25:32 +0200</pubDate>
       
-      <guid>https://example.org/tags/programming/</guid>
+      <guid>https://piotrglazar.github.io/tags/programming/</guid>
       <description></description>
     </item>
     
