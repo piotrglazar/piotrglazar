@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020</copyright>
-    <lastBuildDate>Sun, 26 Jul 2020 10:33:48 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 03 Aug 2020 22:19:49 +0200</lastBuildDate>
     
 	<atom:link href="https://piotrglazar.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Anaconda</title>
+      <link>https://piotrglazar.github.io/blog/anaconda/</link>
+      <pubDate>Mon, 03 Aug 2020 22:19:49 +0200</pubDate>
+      
+      <guid>https://piotrglazar.github.io/blog/anaconda/</guid>
+      <description>Introduction Every programmer should know (or be familiar with) a couple of programming languages. Some languages like Java or Scala are good for production-ready applications. On the other hand, some languages like Python are good for scripting, tooling or creating proof of concepts. If you want to dig deep into being a pragmatic programmer I highly recommend reading The Pragmatic Programmer: From Journeyman to Master by Andrew Hunt and David Thomas.</description>
+    </item>
     
     <item>
       <title>jEnv - Managing Multiple Jdks</title>

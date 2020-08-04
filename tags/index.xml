@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020</copyright>
-    <lastBuildDate>Sun, 26 Jul 2020 10:33:48 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 03 Aug 2020 22:19:49 +0200</lastBuildDate>
     
 	<atom:link href="https://piotrglazar.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>productivity</title>
+      <link>https://piotrglazar.github.io/tags/productivity/</link>
+      <pubDate>Mon, 03 Aug 2020 22:19:49 +0200</pubDate>
+      
+      <guid>https://piotrglazar.github.io/tags/productivity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://piotrglazar.github.io/tags/python/</link>
+      <pubDate>Mon, 03 Aug 2020 22:19:49 +0200</pubDate>
+      
+      <guid>https://piotrglazar.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>workstation-setup</title>
+      <link>https://piotrglazar.github.io/tags/workstation-setup/</link>
+      <pubDate>Mon, 03 Aug 2020 22:19:49 +0200</pubDate>
+      
+      <guid>https://piotrglazar.github.io/tags/workstation-setup/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>jdk</title>
@@ -18,24 +45,6 @@
       <pubDate>Sun, 26 Jul 2020 10:33:48 +0200</pubDate>
       
       <guid>https://piotrglazar.github.io/tags/jdk/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>productivity</title>
-      <link>https://piotrglazar.github.io/tags/productivity/</link>
-      <pubDate>Sun, 26 Jul 2020 10:33:48 +0200</pubDate>
-      
-      <guid>https://piotrglazar.github.io/tags/productivity/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>workstation-setup</title>
-      <link>https://piotrglazar.github.io/tags/workstation-setup/</link>
-      <pubDate>Sun, 26 Jul 2020 10:33:48 +0200</pubDate>
-      
-      <guid>https://piotrglazar.github.io/tags/workstation-setup/</guid>
       <description></description>
     </item>
     
