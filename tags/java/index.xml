@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on </title>
+    <link>https://piotrglazar.github.io/tags/java/</link>
+    <description>Recent content in java on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2020</copyright>
+    <lastBuildDate>Fri, 21 Aug 2020 16:36:41 +0200</lastBuildDate>
+    
+	<atom:link href="https://piotrglazar.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Where does that class come from?</title>
+      <link>https://piotrglazar.github.io/blog/class-location/</link>
+      <pubDate>Fri, 21 Aug 2020 16:36:41 +0200</pubDate>
+      
+      <guid>https://piotrglazar.github.io/blog/class-location/</guid>
+      <description>Dependency hell I believe every Java developer is familiar with the dependency hell term. We use external libraries because they speed up the development process. Instead of reinventing the wheel we can just include a library, like Guava, and we are able to use various functionalities that have been well tested by other people. But unfortunately sometimes we have to pay a high price for this. Libraries can include other libraries and so on, forming a dependency graph.</description>
+    </item>
+    
+  </channel>
+</rss>

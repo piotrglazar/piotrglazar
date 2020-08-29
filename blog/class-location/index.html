@@ -2,12 +2,12 @@
 <html lang="en-us">
 
 <head>
-  <title>Anaconda | </title>
+  <title>Where does that class come from? | </title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
-  <meta name="description" content="Python configuration">
-  <meta name="keywords" content="python , anaconda">
+  <meta name="description" content="From which jar does the class come from?">
+  <meta name="keywords" content="java , class , dependency-hell">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,9 +48,9 @@
             "@id": "https:\/\/piotrglazar.github.io\/"
       },
       "articleSection" : "blog",
-      "name" : "Anaconda",
-      "headline" : "Anaconda",
-      "description" : "Python configuration",
+      "name" : "Where does that class come from?",
+      "headline" : "Where does that class come from?",
+      "description" : "From which jar does the class come from?",
       "inLanguage" : "en-US",
       "author" : "",
       "creator" : "",
@@ -58,11 +58,11 @@
       "accountablePerson" : "",
       "copyrightHolder" : "",
       "copyrightYear" : "2020",
-      "datePublished": "2020-08-03 22:19:49 \x2b0200 CEST",
-      "dateModified" : "2020-08-03 22:19:49 \x2b0200 CEST",
-      "url" : "https:\/\/piotrglazar.github.io\/blog\/anaconda\/",
-      "wordCount" : "227",
-      "keywords" : ["python", "anaconda", "Blog"]
+      "datePublished": "2020-08-21 16:36:41 \x2b0200 CEST",
+      "dateModified" : "2020-08-21 16:36:41 \x2b0200 CEST",
+      "url" : "https:\/\/piotrglazar.github.io\/blog\/class-location\/",
+      "wordCount" : "229",
+      "keywords" : ["java", "class", "dependency-hell", "Blog"]
     }
   
   </script>
@@ -114,37 +114,47 @@ if (!doNotTrack) {
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">Anaconda</h1>
-            <time datetime="2020-08-03 22:19:49 &#43;0200 CEST" class="post__date"
-            >Aug 3 2020</time>
+            <h1 id="post__title">Where does that class come from?</h1>
+            <time datetime="2020-08-21 16:36:41 &#43;0200 CEST" class="post__date"
+            >Aug 21 2020</time>
           </header>
           <article class="post__content">
               
-<h1 id="introduction">Introduction</h1>
-<p>Every programmer should know (or be familiar with) a couple of programming
-languages. Some languages like Java or Scala are good for
-production-ready applications. On the other hand, some languages like
-Python are good for scripting, tooling or creating proof of concepts.
-If you want to dig deep into being a pragmatic programmer I highly
-recommend reading <code>The Pragmatic Programmer: From Journeyman to Master</code>
-by Andrew Hunt and David Thomas.</p>
-<h1 id="python">Python</h1>
-<p>Although I&rsquo;ve been working with JVM languages in my career, I use
-Python for various tasks. Python is advertised as a <code>batteries included</code>
-language but from time to time there is something missing and you have
-to download a package. Of course, you can install Python and Pip from
-your OS package manager, but still you have to download packages manually.</p>
-<h1 id="anaconda">Anaconda</h1>
-<p>Fortunately there&rsquo;s another snake that comes to the rescue of
-troubled programmers - <a href="https://www.anaconda.com/">Anaconda</a>. It is
-mainly used by data scientists, but everybody can benefit from it.
-Anaconda contains many wonderful packages like <code>numpy</code>, <code>pandas</code>
-or <code>scipy</code>. Everything is ready for use and works great on every
-OS. Imagine having a <code>JDK</code> bundled with <code>Guava</code>, <code>Spring</code> or <code>Apache</code>
-with both CLI and GUI to manage it.</p>
+<h1 id="dependency-hell">Dependency hell</h1>
+<p>I believe every Java developer is familiar with the <code>dependency hell</code> term. We use external
+libraries because they speed up the development process. Instead of reinventing the wheel
+we can just include a library, like <code>Guava</code>, and we are able to use various functionalities
+that have been well tested by other people. But unfortunately sometimes we have to pay
+a high price for this. Libraries can include other libraries and so on, forming a dependency graph.</p>
+<h1 id="my-use-case">My use case</h1>
+<p>I was working on parsing <code>protobuf</code>. To be more specific, I wanted to parse the POST
+payload as <code>protobuf</code> message. Everything was working fine in unit tests, but
+somehow I got the <code>NoSuchMethodError</code>. The code was trying to call <code>com.google.protobuf.CodedInputStream#readStringRequireUtf8</code>
+function, but somehow it wasn&rsquo;t there.</p>
+<h1 id="how-to-debug-it">How to debug it?</h1>
+<p>My service was running in Kubernetes and it was very difficult to run it from
+local machine. But thanks to the following code snippet I was able to print
+the jar name where <code>CodedInputStream</code> was.</p>
+<pre><code class="language-java">Class protoClass = Class
+    .forName(&quot;com.google.protobuf.CodedInputStream&quot;)
+String location = protoClass.getProtectionDomain()
+    .getCodeSource()
+    .getLocation()
+    .toString()
+Files.write(
+    Paths.get(&quot;/tmp/proto-location.txt&quot;),
+    Collections.singletonList(protoLocation),
+    StandardOpenOption.CREATE,
+    StandardOpenOption.WRITE,
+    StandardOpenOption.TRUNCATE_EXISTING
+)
+</code></pre>
+<p>I was so surprised when I saw <code>file:/some-path/hive-exec-3.1.2.jar</code></p>
+<h1 id="whats-next">What&rsquo;s next?</h1>
+<p>I&rsquo;ve excluded <code>hive-exec</code> from my build and everything worked!</p>
 <h1 id="conclusion">Conclusion</h1>
-<p>I hope that the next time instead of installing Python you will give
-Anaconda a chance. Or maybe you already switched from raw Python to Anaconda?</p>
+<p>Java reflection API is a very powerful and useful tool. It is definitely worth
+knowing that it may help you in many use cases.</p>
 
 
               
@@ -154,28 +164,23 @@ Anaconda a chance. Or maybe you already switched from raw Python to Anaconda?</p
 <ul class="tags__list">
     
     <li class="tag__item">
-        <a class="tag__link" href="https://piotrglazar.github.io/tags/python/">python</a>
+        <a class="tag__link" href="https://piotrglazar.github.io/tags/java/">java</a>
     </li>
     <li class="tag__item">
-        <a class="tag__link" href="https://piotrglazar.github.io/tags/productivity/">productivity</a>
+        <a class="tag__link" href="https://piotrglazar.github.io/tags/debug/">debug</a>
     </li>
     <li class="tag__item">
-        <a class="tag__link" href="https://piotrglazar.github.io/tags/workstation-setup/">workstation-setup</a>
+        <a class="tag__link" href="https://piotrglazar.github.io/tags/dependency-hell/">dependency-hell</a>
     </li></ul>
 
  <div class="pagination">
   
-    <a class="pagination__item" href="https://piotrglazar.github.io/blog/jenv-multiple-jdks/">
+    <a class="pagination__item" href="https://piotrglazar.github.io/blog/anaconda/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">jEnv - Managing Multiple Jdks</span>
+        <span class="pagination__title">Anaconda</span>
     </a>
   
 
-  
-    <a class="pagination__item" href="https://piotrglazar.github.io/blog/class-location/">
-      <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >Where does that class come from?</a>
-    </a>
   
 </div>
 
