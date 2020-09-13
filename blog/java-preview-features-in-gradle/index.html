@@ -2,12 +2,12 @@
 <html lang="en-us">
 
 <head>
-  <title>jEnv - Managing Multiple Jdks | </title>
+  <title>Java Preview Features | </title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
-  <meta name="description" content="JDK configuration">
-  <meta name="keywords" content="jdk , jenv">
+  <meta name="description" content="How to play with Java preview features in Gradle projects">
+  <meta name="keywords" content="java , preview , gradle">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,9 +48,9 @@
             "@id": "https:\/\/piotrglazar.github.io\/"
       },
       "articleSection" : "blog",
-      "name" : "jEnv - Managing Multiple Jdks",
-      "headline" : "jEnv - Managing Multiple Jdks",
-      "description" : "JDK configuration",
+      "name" : "Java Preview Features",
+      "headline" : "Java Preview Features",
+      "description" : "How to play with Java preview features in Gradle projects",
       "inLanguage" : "en-US",
       "author" : "",
       "creator" : "",
@@ -58,11 +58,11 @@
       "accountablePerson" : "",
       "copyrightHolder" : "",
       "copyrightYear" : "2020",
-      "datePublished": "2020-07-26 10:33:48 \x2b0200 CEST",
-      "dateModified" : "2020-07-26 10:33:48 \x2b0200 CEST",
-      "url" : "https:\/\/piotrglazar.github.io\/blog\/jenv-multiple-jdks\/",
-      "wordCount" : "348",
-      "keywords" : ["jdk", "jenv", "Blog"]
+      "datePublished": "2020-09-13 13:05:21 \x2b0200 CEST",
+      "dateModified" : "2020-09-13 13:05:21 \x2b0200 CEST",
+      "url" : "https:\/\/piotrglazar.github.io\/blog\/java-preview-features-in-gradle\/",
+      "wordCount" : "124",
+      "keywords" : ["java", "preview", "gradle", "Blog"]
     }
   
   </script>
@@ -114,46 +114,32 @@ if (!doNotTrack) {
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">jEnv - Managing Multiple Jdks</h1>
-            <time datetime="2020-07-26 10:33:48 &#43;0200 CEST" class="post__date"
-            >Jul 26 2020</time>
+            <h1 id="post__title">Java Preview Features</h1>
+            <time datetime="2020-09-13 13:05:21 &#43;0200 CEST" class="post__date"
+            >Sep 13 2020</time>
           </header>
           <article class="post__content">
               
 <h1 id="introduction">Introduction</h1>
-<p>Before Java 8 there was no need to have multiple JDKs on your machine. Java development process
-was slow enough that even big and rusty corporations could catch up. But since JDK 9 the development
-process is much faster and new Java versions are released more often.</p>
-<h1 id="why-even-bother">Why even bother?</h1>
-<p>Some projects may run on an older JDK due to various reasons:</p>
-<ul>
-<li>the tooling does not yet support new JDKs,</li>
-<li>some libraries do not work on new JDKs - this can be seen when migrating from pre-JDK 9 to JDK 9 or onward,</li>
-<li>sometimes it is better to wait than to be an early adopter for core production services,</li>
-<li>and many, many more.</li>
-</ul>
-<p>On the other hand being a good Java developer requires one to be up to date with updates introduced
-by new Java versions.</p>
-<h1 id="where-is-the-problem">Where is the problem?</h1>
-<p>Every Java developer knows that <code>java</code> is only one of programs shipped with JDK. There are other
-important tools like <code>javac</code>, <code>keytool</code>, <code>jps</code> and many others. They can be often picked up by
-build tools like <code>Gradle</code> or <code>Maven</code>. Even if you set <code>JAVA_HOME</code> environment variable for target JDK,
-a tool might pick up another one and the build fails.</p>
-<h1 id="what-is-the-solution">What is the solution?</h1>
-<p>Ideally we should be able to use the right JDK for the right project.
-Changing <code>JAVA_HOME</code> or <code>PATH</code> environment variables is tedious but
-fortunately there is a tool for that - <a href="https://www.jenv.be/">jEnv</a></p>
-<h1 id="usage">Usage</h1>
-<p>Just follow instructions on the web page. This tool is very simply to use yet
-very powerful. One thing that is not mentioned on the web page is that
-you can put <code>.java_version</code> file in the root directory of your project.
-This file should contain the <code>JDK</code> that you want to use for this project.
-The <code>JDK</code> version must match one of the values printed out by <code>jevn versions</code>
-command.</p>
-<p>Moreover, you want to make sure that <code>jenv doctor</code> passes all checks.</p>
+<p>A great software developer should always learn. Fortunately, after Java 8 has been released,
+the development pace of next Java versions increased. I think that every Java developer should be
+up do date with the newest features. However, some of them are marked as <code>preview</code>, so they won&rsquo;t
+compile by default.</p>
+<h1 id="preview-features-and-gradle">Preview features and Gradle</h1>
+<p>Gradle is my favourite build tool for Java projects. In this post I&rsquo;m going to present how to
+use Java preview features in Gradle projects.</p>
+<p>This is very simple and requires minor changes in the <code>gradle.build</code> file.</p>
+<pre><code>tasks.withType(JavaCompile).each {
+    it.options.compilerArgs.add('--enable-preview')
+}
+
+test {
+    jvmArgs(['--enable-preview'])
+}
+</code></pre>
 <h1 id="conclusion">Conclusion</h1>
-<p>Good luck and have fun with playing with various <code>JDK</code> whether it is for work or 
-just for the pleasure of discovering new features in new <code>JDK</code>s.</p>
+<p>As you can see, turning on Java preview features in Gradle projects is extremely easy.
+Good luck and have fun with learning!</p>
 
 
               
@@ -163,28 +149,23 @@ just for the pleasure of discovering new features in new <code>JDK</code>s.</p>
 <ul class="tags__list">
     
     <li class="tag__item">
-        <a class="tag__link" href="https://piotrglazar.github.io/tags/jdk/">jdk</a>
+        <a class="tag__link" href="https://piotrglazar.github.io/tags/java/">java</a>
     </li>
     <li class="tag__item">
-        <a class="tag__link" href="https://piotrglazar.github.io/tags/productivity/">productivity</a>
+        <a class="tag__link" href="https://piotrglazar.github.io/tags/preview/">preview</a>
     </li>
     <li class="tag__item">
-        <a class="tag__link" href="https://piotrglazar.github.io/tags/workstation-setup/">workstation-setup</a>
+        <a class="tag__link" href="https://piotrglazar.github.io/tags/gradle/">gradle</a>
     </li></ul>
 
  <div class="pagination">
   
-    <a class="pagination__item" href="https://piotrglazar.github.io/blog/git-aliases/">
+    <a class="pagination__item" href="https://piotrglazar.github.io/blog/class-location/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">Git Aliases</span>
+        <span class="pagination__title">Where does that class come from?</span>
     </a>
   
 
-  
-    <a class="pagination__item" href="https://piotrglazar.github.io/blog/anaconda/">
-      <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >Anaconda</a>
-    </a>
   
 </div>
 
