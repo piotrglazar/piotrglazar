@@ -2,12 +2,12 @@
 <html lang="en-us">
 
 <head>
-  <title>Java Preview Features | </title>
+  <title>Java 14 instanceof Pattern Matching | </title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
-  <meta name="description" content="How to play with Java preview features in Gradle projects">
-  <meta name="keywords" content="java , preview , gradle">
+  <meta name="description" content="Java 14 instanceof Pattern Matching code example">
+  <meta name="keywords" content="java , java14 , new-feature">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,9 +48,9 @@
             "@id": "https:\/\/piotrglazar.github.io\/"
       },
       "articleSection" : "blog",
-      "name" : "Java Preview Features",
-      "headline" : "Java Preview Features",
-      "description" : "How to play with Java preview features in Gradle projects",
+      "name" : "Java 14 instanceof Pattern Matching",
+      "headline" : "Java 14 instanceof Pattern Matching",
+      "description" : "Java 14 instanceof Pattern Matching code example",
       "inLanguage" : "en-US",
       "author" : "",
       "creator" : "",
@@ -58,11 +58,11 @@
       "accountablePerson" : "",
       "copyrightHolder" : "",
       "copyrightYear" : "2020",
-      "datePublished": "2020-09-13 13:05:21 \x2b0200 CEST",
-      "dateModified" : "2020-09-13 13:05:21 \x2b0200 CEST",
-      "url" : "https:\/\/piotrglazar.github.io\/blog\/java-preview-features-in-gradle\/",
-      "wordCount" : "124",
-      "keywords" : ["java", "preview", "gradle", "Blog"]
+      "datePublished": "2020-09-13 13:28:39 \x2b0200 CEST",
+      "dateModified" : "2020-09-13 13:28:39 \x2b0200 CEST",
+      "url" : "https:\/\/piotrglazar.github.io\/blog\/java-14-instanceof-pattern-matching\/",
+      "wordCount" : "306",
+      "keywords" : ["java", "java14", "new-feature", "Blog"]
     }
   
   </script>
@@ -114,32 +114,59 @@ if (!doNotTrack) {
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">Java Preview Features</h1>
-            <time datetime="2020-09-13 13:05:21 &#43;0200 CEST" class="post__date"
+            <h1 id="post__title">Java 14 instanceof Pattern Matching</h1>
+            <time datetime="2020-09-13 13:28:39 &#43;0200 CEST" class="post__date"
             >Sep 13 2020</time>
           </header>
           <article class="post__content">
               
 <h1 id="introduction">Introduction</h1>
-<p>A great software developer should always learn. Fortunately, after Java 8 has been released,
-the development pace of next Java versions increased. I think that every Java developer should be
-up do date with the newest features. However, some of them are marked as <code>preview</code>, so they won&rsquo;t
-compile by default.</p>
-<h1 id="preview-features-and-gradle">Preview features and Gradle</h1>
-<p>Gradle is my favourite build tool for Java projects. In this post I&rsquo;m going to present how to
-use Java preview features in Gradle projects.</p>
-<p>This is very simple and requires minor changes in the <code>gradle.build</code> file.</p>
-<pre><code>tasks.withType(JavaCompile).each {
-    it.options.compilerArgs.add('--enable-preview')
-}
-
-test {
-    jvmArgs(['--enable-preview'])
+<p>As of today, <a href="https://openjdk.java.net/projects/jdk/14/">Java 14</a> is the latest Java version.
+It introduces various cool features that I&rsquo;d like to show here. However, in this post
+I will focus on <code>Pattern Matching for instanceof</code>. This feature is in <code>preview</code>, so you have
+to explicitly enable it in your project. You can check my previous post to see how to do it 
+in Gradle. Alternatively, you can take a look at full example <a href="https://github.com/piotrglazar/personal-blog-code/blob/master/java-examples/src/main/java/com/piotrglazar/InstanceOfPatternMatching.java">here</a>.</p>
+<h1 id="motivation">Motivation</h1>
+<p>Pretty much every program contains a piece of code that is similar to the following one:</p>
+<pre><code class="language-java">if (obj instanceof Integer) {
+    Integer i = (Integer) obj;
+    // do something with i
 }
 </code></pre>
-<h1 id="conclusion">Conclusion</h1>
-<p>As you can see, turning on Java preview features in Gradle projects is extremely easy.
-Good luck and have fun with learning!</p>
+<p>As you can see, in order to do a simple thing, you have to type a lot of code. Basically three
+things happen underneath:</p>
+<ul>
+<li>a test,</li>
+<li>a conversion (or a cast),</li>
+<li>local variable declaration.
+Consider this Scala equivalent:</li>
+</ul>
+<pre><code class="language-scala">obj match {
+    case Int =&gt; // do something with obj
+    case _ =&gt; // do nothing
+}
+</code></pre>
+<p>It looks better, doesn&rsquo;t it? Can we have something similar in Java?</p>
+<h1 id="java-14-feature">Java 14 feature</h1>
+<p>Java 14 comes along with pattern matching for instanceof. Take a look at the follwing piece
+of code:</p>
+<pre><code class="language-java">public static void whoIsIt(Object o) {
+    if (o instanceof Integer i) {
+        LOGGER.info(&quot;I'm an integer {}&quot;, i);
+    } else if (o instanceof String s) {
+        LOGGER.info(&quot;I'm a string {}&quot;, s);
+    } else {
+        LOGGER.info(&quot;Unknown argument {}&quot;, o);
+    }
+}
+</code></pre>
+<p>As you can see, all three things happen in one line of code.
+From now one you can benefit from cleaner code that is easier to read than the previous one.
+Of course, this code is null-safe. The pattern will only match, 
+and the variable will only be assigned, if obj is not null.</p>
+<h2 id="further-reading">Further reading<a class="anchor" href="#further-reading">#</a></h2>
+<p>Working example can be found in my <a href="https://github.com/piotrglazar/personal-blog-code/blob/master/java-examples/src/main/java/com/piotrglazar/InstanceOfPatternMatching.java">GitHub repo</a>.
+You can find full feature description <a href="https://openjdk.java.net/jeps/305">here</a>.</p>
 
 
               
@@ -152,25 +179,20 @@ Good luck and have fun with learning!</p>
         <a class="tag__link" href="https://piotrglazar.github.io/tags/java/">java</a>
     </li>
     <li class="tag__item">
-        <a class="tag__link" href="https://piotrglazar.github.io/tags/preview/">preview</a>
+        <a class="tag__link" href="https://piotrglazar.github.io/tags/java14/">java14</a>
     </li>
     <li class="tag__item">
-        <a class="tag__link" href="https://piotrglazar.github.io/tags/gradle/">gradle</a>
+        <a class="tag__link" href="https://piotrglazar.github.io/tags/new-feature/">new-feature</a>
     </li></ul>
 
  <div class="pagination">
   
-    <a class="pagination__item" href="https://piotrglazar.github.io/blog/class-location/">
+    <a class="pagination__item" href="https://piotrglazar.github.io/blog/java-preview-features-in-gradle/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">Where does that class come from?</span>
+        <span class="pagination__title">Java Preview Features</span>
     </a>
   
 
-  
-    <a class="pagination__item" href="https://piotrglazar.github.io/blog/java-14-instanceof-pattern-matching/">
-      <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >Java 14 instanceof Pattern Matching</a>
-    </a>
   
 </div>
 
