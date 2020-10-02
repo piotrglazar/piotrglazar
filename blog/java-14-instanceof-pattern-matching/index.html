@@ -124,7 +124,7 @@ if (!doNotTrack) {
 <p>As of today, <a href="https://openjdk.java.net/projects/jdk/14/">Java 14</a> is the latest Java version.
 It introduces various cool features that I&rsquo;d like to show here. However, in this post
 I will focus on <code>Pattern Matching for instanceof</code>. This feature is in <code>preview</code>, so you have
-to explicitly enable it in your project. You can check my previous post to see how to do it 
+to explicitly enable it in your project. You can check my previous post to see how to do it
 in Gradle. Alternatively, you can take a look at full example <a href="https://github.com/piotrglazar/personal-blog-code/blob/master/java-examples/src/main/java/com/piotrglazar/InstanceOfPatternMatching.java">here</a>.</p>
 <h1 id="motivation">Motivation</h1>
 <p>Pretty much every program contains a piece of code that is similar to the following one:</p>
@@ -162,7 +162,7 @@ of code:</p>
 </code></pre>
 <p>As you can see, all three things happen in one line of code.
 From now one you can benefit from cleaner code that is easier to read than the previous one.
-Of course, this code is null-safe. The pattern will only match, 
+Of course, this code is null-safe. The pattern will only match,
 and the variable will only be assigned, if obj is not null.</p>
 <h2 id="further-reading">Further reading<a class="anchor" href="#further-reading">#</a></h2>
 <p>Working example can be found in my <a href="https://github.com/piotrglazar/personal-blog-code/blob/master/java-examples/src/main/java/com/piotrglazar/InstanceOfPatternMatching.java">GitHub repo</a>.
