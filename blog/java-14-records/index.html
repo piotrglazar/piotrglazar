@@ -2,11 +2,11 @@
 <html lang="en-us">
 
 <head>
-  <title>Java 14 instanceof Pattern Matching | </title>
+  <title>Java 14 Records | </title>
 
   <meta charset="UTF-8">
   <meta name="language" content="en">
-  <meta name="description" content="Java 14 instanceof Pattern Matching code example">
+  <meta name="description" content="Java 14 record code example">
   <meta name="keywords" content="java , java14 , new-feature">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -48,9 +48,9 @@
             "@id": "https:\/\/piotrglazar.github.io\/"
       },
       "articleSection" : "blog",
-      "name" : "Java 14 instanceof Pattern Matching",
-      "headline" : "Java 14 instanceof Pattern Matching",
-      "description" : "Java 14 instanceof Pattern Matching code example",
+      "name" : "Java 14 Records",
+      "headline" : "Java 14 Records",
+      "description" : "Java 14 record code example",
       "inLanguage" : "en-US",
       "author" : "",
       "creator" : "",
@@ -58,10 +58,10 @@
       "accountablePerson" : "",
       "copyrightHolder" : "",
       "copyrightYear" : "2020",
-      "datePublished": "2020-09-13 13:28:39 \x2b0200 CEST",
-      "dateModified" : "2020-09-13 13:28:39 \x2b0200 CEST",
-      "url" : "https:\/\/piotrglazar.github.io\/blog\/java-14-instanceof-pattern-matching\/",
-      "wordCount" : "306",
+      "datePublished": "2020-09-23 22:29:46 \x2b0200 CEST",
+      "dateModified" : "2020-09-23 22:29:46 \x2b0200 CEST",
+      "url" : "https:\/\/piotrglazar.github.io\/blog\/java-14-records\/",
+      "wordCount" : "231",
       "keywords" : ["java", "java14", "new-feature", "Blog"]
     }
   
@@ -114,59 +114,49 @@ if (!doNotTrack) {
       <div class="post__container">
         <div class="post">
           <header class="post__header">
-            <h1 id="post__title">Java 14 instanceof Pattern Matching</h1>
-            <time datetime="2020-09-13 13:28:39 &#43;0200 CEST" class="post__date"
-            >Sep 13 2020</time>
+            <h1 id="post__title">Java 14 Records</h1>
+            <time datetime="2020-09-23 22:29:46 &#43;0200 CEST" class="post__date"
+            >Sep 23 2020</time>
           </header>
           <article class="post__content">
               
+<p><a href="https://dzone.com/articles/a-first-look-at-records-in-java-14">https://dzone.com/articles/a-first-look-at-records-in-java-14</a></p>
 <h1 id="introduction">Introduction</h1>
-<p>As of today, <a href="https://openjdk.java.net/projects/jdk/14/">Java 14</a> is the latest Java version.
-It introduces various cool features that I&rsquo;d like to show here. However, in this post
-I will focus on <code>Pattern Matching for instanceof</code>. This feature is in <code>preview</code>, so you have
+<p>Java 14 brings in another cool feature - Records. They are designed to represent only the state,
+without additional boilerplate. This feature is in <code>preview</code>, so you have
 to explicitly enable it in your project. You can check my previous post to see how to do it
-in Gradle. Alternatively, you can take a look at full example <a href="https://github.com/piotrglazar/personal-blog-code/blob/master/java-examples/src/main/java/com/piotrglazar/InstanceOfPatternMatching.java">here</a>.</p>
-<h1 id="motivation">Motivation</h1>
-<p>Pretty much every program contains a piece of code that is similar to the following one:</p>
-<pre><code class="language-java">if (obj instanceof Integer) {
-    Integer i = (Integer) obj;
-    // do something with i
-}
+in Gradle. Alternatively, you can take a look at full example <a href="https://github.com/piotrglazar/personal-blog-code/blob/master/java-examples/src/main/java/com/piotrglazar/Range.java">here</a>.</p>
+<h1 id="how-does-a-record-look-like">How does a record look like</h1>
+<p>Take a look at the following piece of code:</p>
+<pre><code class="language-java">public record Point(int x, int y) {}
 </code></pre>
-<p>As you can see, in order to do a simple thing, you have to type a lot of code. Basically three
-things happen underneath:</p>
+<p>Under the hood we could find that:</p>
 <ul>
-<li>a test,</li>
-<li>a conversion (or a cast),</li>
-<li>local variable declaration.
-Consider this Scala equivalent:</li>
+<li>This class is <code>final</code>.</li>
+<li>It extends <code>java.lang.Record</code>.</li>
+<li>It has two private final fields <code>x</code> and <code>y</code>.</li>
+<li>It has a public constructor <code>Point(int, int)</code>.</li>
+<li>It has two getters <code>x()</code> and <code>y()</code>.</li>
+<li>It has <code>toString</code>, <code>equals</code> and <code>hashCode</code> methods.</li>
 </ul>
-<pre><code class="language-scala">obj match {
-    case Int =&gt; // do something with obj
-    case _ =&gt; // do nothing
-}
-</code></pre>
-<p>It looks better, doesn&rsquo;t it? Can we have something similar in Java?</p>
-<h1 id="java-14-feature">Java 14 feature</h1>
-<p>Java 14 comes along with pattern matching for instanceof. Take a look at the follwing piece
-of code:</p>
-<pre><code class="language-java">public static void whoIsIt(Object o) {
-    if (o instanceof Integer i) {
-        LOGGER.info(&quot;I'm an integer {}&quot;, i);
-    } else if (o instanceof String s) {
-        LOGGER.info(&quot;I'm a string {}&quot;, s);
-    } else {
-        LOGGER.info(&quot;Unknown argument {}&quot;, o);
+<h1 id="additional-methods-and-fields">Additional methods and fields</h1>
+<p>It is not possible to add instance fields to records. However, it is possible to
+add static fields. Static and class (instance methods) can be added as well.
+The syntax is the same as for regular Java classes.
+Moreover, one can override a default constructor to add extra behaviour:</p>
+<pre><code class="language-java">public record Range(int low, int high) {
+
+    public Range {
+        if (low &gt; high) {
+            throw new InvalidRangeBoundariesException(low, high);
+        }
     }
 }
 </code></pre>
-<p>As you can see, all three things happen in one line of code.
-From now one you can benefit from cleaner code that is easier to read than the previous one.
-Of course, this code is null-safe. The pattern will only match,
-and the variable will only be assigned, if obj is not null.</p>
-<h2 id="further-reading">Further reading<a class="anchor" href="#further-reading">#</a></h2>
-<p>Working example can be found in my <a href="https://github.com/piotrglazar/personal-blog-code/blob/master/java-examples/src/main/java/com/piotrglazar/InstanceOfPatternMatching.java">GitHub repo</a>.
-You can find full feature description <a href="https://openjdk.java.net/jeps/305">here</a>.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>Records allow programmers to implement data classes properly. The code is far less verbose
+when compared to regular classes.
+For further reading you can check the <a href="https://openjdk.java.net/jeps/359">official page</a>.</p>
 
 
               
@@ -187,17 +177,12 @@ You can find full feature description <a href="https://openjdk.java.net/jeps/305
 
  <div class="pagination">
   
-    <a class="pagination__item" href="https://piotrglazar.github.io/blog/java-preview-features-in-gradle/">
+    <a class="pagination__item" href="https://piotrglazar.github.io/blog/java-14-instanceof-pattern-matching/">
         <span class="pagination__label">Previous Post</span>
-        <span class="pagination__title">Java Preview Features</span>
+        <span class="pagination__title">Java 14 instanceof Pattern Matching</span>
     </a>
   
 
-  
-    <a class="pagination__item" href="https://piotrglazar.github.io/blog/java-14-records/">
-      <span class="pagination__label">Next Post</span>
-      <span class="pagination__title" >Java 14 Records</a>
-    </a>
   
 </div>
 
